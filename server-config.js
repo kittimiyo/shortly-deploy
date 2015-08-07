@@ -4,6 +4,8 @@ var util = require('./lib/utility');
 
 var handler = require('./lib/request-handler');
 
+require('./app/config.js');
+
 var app = express();
 
 app.configure(function() {
