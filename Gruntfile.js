@@ -82,7 +82,7 @@ module.exports = function(grunt) {
         stderr: true
       },
       prodServer: {
-        command: 'git push azure master'
+        command: 'git push deploy master'
       }
     }
   });
