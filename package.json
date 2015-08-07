@@ -6,6 +6,9 @@
   "repository": "",
   "license": "Proprietary",
   "private": true,
+  "engines" : {
+    "node" : ">=0.10.3 <0.12"
+  },
   "dependencies": {
     "knex": "~0.5.7",
     "bookshelf": "~0.6.4",
@@ -32,5 +35,8 @@
   },
   "devDependencies": {
     "supertest": "^0.10.0"
+  },
+  "scripts":{
+     "start": "node server.js"
   }
 }
