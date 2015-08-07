@@ -15,4 +15,10 @@ Icon
 .floobit
 .floo
 .flooignore
+<<<<<<< HEAD
  
+=======
+
+local.env
+public/dist
+>>>>>>> 110ad811fa215dbb256156b2eb8716c92deab059
