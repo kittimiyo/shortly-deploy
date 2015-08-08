@@ -13,5 +13,12 @@ if (process.env.NODE_ENV === 'production') {
 
   mongoose.connect('mongodb://localhost/shortly'); // connect to mongo database named shortly
 }
+
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once('open', function() {
+  console.log('connected!');
+});
+
+module.exports = db;
