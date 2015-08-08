@@ -3,13 +3,15 @@ var env = require('../local.js');
 var mongoDBConnectionURI;
 
 if (process.env.NODE_ENV === 'production') {
-  mongoDBConnectionURI = env.MONGO_URI;
+  mongoose.connect(env.MONGO_URI, {
+    user: 'shortly',
+    pass: 'qwerty'
+  }); // connect to mongo database named shortly
 } else {
-  mongoDBConnectionURI = 'mongodb://localhost/shortly';
+
+  console.log('mongoose connect');
+
+  mongoose.connect('mongodb://localhost/shortly'); // connect to mongo database named shortly
 }
-
-
-mongoose.connect(mongoDBConnectionURI, {
-  user: 'shortly',
-  pass: 'qwerty'
-}); // connect to mongo database named shortly
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));

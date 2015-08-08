@@ -1,6 +1,6 @@
 
 module.exports = function(grunt) {
-  var env = require('local.js');
+  var env = require('./local.js');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
