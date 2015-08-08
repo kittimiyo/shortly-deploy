@@ -1,13 +1,15 @@
 var mongoose = require('mongoose');
+var env = require('../local.js');
 var mongoDBConnectionURI;
 
 if (process.env.NODE_ENV === 'production') {
-  mongoDBConnectionURI =
-    'mongodb://MongoLab-w1:iTgM648ERSjq_QC5IJzcVDf2hHGUHBiSOJ7dU_5T0lY-@ds045097.mongolab.com:45097/MongoLab-w1';
+  mongoDBConnectionURI = env.MONGO_URI;
 } else {
-  'mongodb://localhost/shortly'
   mongoDBConnectionURI = 'mongodb://localhost/shortly';
 }
 
 
-mongoose.connect(mongoDBConnectionURI); // connect to mongo database named shortly
+mongoose.connect(mongoDBConnectionURI, {
+  user: 'shortly',
+  pass: 'qwerty'
+}); // connect to mongo database named shortly

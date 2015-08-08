@@ -1,6 +1,6 @@
 
 module.exports = function(grunt) {
-  //var env = require('local.js');
+  var env = require('local.js');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
         stderr: true
       },
       prodServer: {
-        command: 'git push deploy master'
+        command: 'git push ' + env.REMOTE + ' master'
       }
     }
   });
